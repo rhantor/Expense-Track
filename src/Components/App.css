@@ -1,0 +1,128 @@
+
+.card{
+  box-shadow: 2px  2px 4px rgba(136, 136, 136, 0.342);
+  width: 100%;
+}
+.income{
+  border-right: 1px solid rgb(197, 196, 196);             
+  text-align: center;
+  width: 50%;
+}
+.expense{
+  width: 50%;
+  text-align: center;
+}
+/* .income::after{
+  content: '';
+  position: absolute;
+  right: -75px;
+  top: 0;
+  height: 100%;
+  background: rgba(156, 154, 154, 0.514);
+  width: 1px;
+
+} */
+li.list-group-item.d-flex.justify-content-between {
+  box-shadow: 1px 1px 3px #605b5b38;
+  border-radius: 5px;
+}
+
+.dlt-btn{
+  position:absolute;
+  right: -10px;
+  top: 0;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.minus:hover .dlt-btn{
+  opacity: 1;
+  transition: 0.3s;
+  right: -35px;
+  border: 1px solid;
+  color: rgb(255, 255, 255);
+  background-color: red;
+}
+.plus:hover .dlt-btn{
+  opacity: 1;
+  transition: 0.3s;
+  right: -35px;
+  border: 1px solid;
+  color: rgb(255, 255, 255);
+  background-color: rgb(13,110,253);
+}
+.list:hover.minus{
+  border-right: none !important;
+}
+.list:hover.plus{
+  border-right: none !important;
+  
+}
+.plus {
+  border-right: 3px solid rgb(13,110,253) !important;
+  transition: border 0.3s ;
+}
+.minus {
+  border-right: 3px solid #dc3545 !important;
+  transition: border 0.3s ;
+}
+
+.plusAmount{
+  color: rgb(13,110,253);
+}
+.minusAmount{
+  color: #dc3545;
+}
+.noData{
+  width: 100%;
+  height: 100%;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+.noData h2{
+  text-align: center;
+  font-family: fantasy;
+  color: #fff;
+  text-shadow: 2px 2px 4px #444;
+}
+.noData{
+  user-select: none;
+  user-zoom: 500px;
+}
+
+@media screen and (max-width : 700px){
+
+  .noData h2{
+    font-size: 2rem;
+  }
+  .noteImg{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .noteImg img{
+    width: 70%;
+
+  }
+}
+.note{
+  width: 40px;
+  height: 40px;
+  background-color: #dc3545;
+  color: #fff;
+  padding: 0.3rem 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.note:hover{
+  width: 350px;
+  border-radius: 1rem 0.2rem 0.2rem 1rem;
+}
+@media screen and (max-width : 600px){
+
+.list-content{
+  width: 80% !important;
+  margin: auto;
+}
+}
