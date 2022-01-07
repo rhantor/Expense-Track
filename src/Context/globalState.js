@@ -1,6 +1,12 @@
 import React, { createContext, useEffect, useReducer } from "react";
 const initialState = {
-  transactions: [],
+  transactions: [
+    {
+      id: 0 ,
+      text: "" ,
+      amount: 0 ,
+    }
+  ],
 };
 // create context api
 export const GlobalContext = createContext(initialState);
@@ -28,7 +34,7 @@ function AppReducer(state, action) {
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState , ()=>{
     const localData = localStorage.getItem('state')
-    return localData ? JSON.parse(localData) : []
+    return localData ? JSON.parse(localData) : state ;
   });
 
   useEffect(()=>{
