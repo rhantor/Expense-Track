@@ -1,7 +1,6 @@
 import React, { Fragment, useContext, useState } from "react";
 import { GlobalContext } from "../Context/globalState";
-import ErrorIcon from '@mui/icons-material/Error';
-
+import ErrorIcon from "@mui/icons-material/Error";
 
 export const AddHistory = () => {
   const [text, setText] = useState("");
@@ -11,13 +10,18 @@ export const AddHistory = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newTransaction = {
-      id: Math.floor(Math.random() * 1000000),
-      text: text,
-      amount: +amount,
-    };
+    if (text && amount) {
+      const newTransaction = {
+        id: Math.floor(Math.random() * 1000000),
+        text: text,
+        amount: +amount,
+      };
 
-    addTransaction(newTransaction);
+      addTransaction(newTransaction);
+    } else {
+      alert("put down your values");
+    }
+
     setText("");
     setAmount(0);
   };
@@ -25,12 +29,12 @@ export const AddHistory = () => {
     <Fragment>
       <h4>Add new transaction</h4>
       <hr />
-      <p className="note m-0"> 
-          <ErrorIcon /> 
-           negative - expense , positive - income{" "}
-        </p>
-        
-        <br />
+      <p className="note m-0">
+        <ErrorIcon />
+        negative - expense , positive - income{" "}
+      </p>
+
+      <br />
       <form action="#" onSubmit={handleSubmit}>
         <div className="input-group">
           <label htmlFor="text" className="input-group-text">
@@ -49,12 +53,8 @@ export const AddHistory = () => {
         </div>
         <br />
 
-        
         <div className="input-group">
-          <label
-            htmlFor="amount"
-            className="input-group-text"
-          >
+          <label htmlFor="amount" className="input-group-text">
             Amount
           </label>
           <input
@@ -68,7 +68,6 @@ export const AddHistory = () => {
           />
         </div>
 
-        
         <br />
         <div className="d-grid ">
           <button type="submit" className="btn  btn-info text-light">
